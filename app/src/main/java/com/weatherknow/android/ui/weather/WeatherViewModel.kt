@@ -9,11 +9,11 @@ import com.weatherknow.android.logic.model.Location
 class WeatherViewModel : ViewModel() {
     private val locationLiveData = MutableLiveData<Location>()
 
-    val locationlng = ""
+    var locationlng = ""
 
-    val locationlat = ""
+    var locationlat = ""
 
-    val placeName = ""
+    var placeName = ""
 
     val weatherLiveData = Transformations.switchMap(locationLiveData) { location ->
         Repository.refreshWeather(location.lng, location.lat)

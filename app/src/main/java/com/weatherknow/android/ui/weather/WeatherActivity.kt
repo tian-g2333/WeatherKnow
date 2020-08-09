@@ -37,11 +37,11 @@ class WeatherActivity : AppCompatActivity() {
             window.statusBarColor = Color.TRANSPARENT
         }
         setContentView(R.layout.activity_weather)
-        if (viewModel.locationLng.isEmpty()) {
-            viewModel.locationLng = intent.getStringExtra("location_lng") ?: ""
+        if (viewModel.locationlng.isEmpty()) {
+            viewModel.locationlng = intent.getStringExtra("location_lng") ?: ""
         }
-        if (viewModel.locationLat.isEmpty()) {
-            viewModel.locationLat = intent.getStringExtra("location_lat") ?: ""
+        if (viewModel.locationlat.isEmpty()) {
+            viewModel.locationlat = intent.getStringExtra("location_lat") ?: ""
         }
         if (viewModel.placeName.isEmpty()) {
             viewModel.placeName = intent.getStringExtra("place_name") ?: ""
@@ -79,7 +79,7 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     fun refreshWeather() {
-        viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat)
+        viewModel.refreshweather(viewModel.locationlng, viewModel.locationlat)
         swipeRefresh.isRefreshing = true
     }
 
